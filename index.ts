@@ -1,11 +1,10 @@
-
-        const message = document.querySelector('.message');
-        const score = document.querySelector('.score');
-        const buttons = document.querySelectorAll('button');
-        const winnerScores = [0,0];
+const message:any = document.querySelector('.message');
+        const score:any = document.querySelector('.score');
+        const buttons:any = document.querySelectorAll('button');
+        const winnerScores:any = [0,0];
         
         //add event listeners to buttons
-        for ( let i = 0 ; i < buttons.length ; i++){
+        for ( let i:number = 0 ; i < buttons.length ; i++){
             buttons[i].addEventListener('click', playGame);
         }
 
@@ -43,44 +42,3 @@
             if (result === 'Draw'){
                 result += '. It\'s a tie!'
             }
-
-            //output score into Score DIV
-            score.innerHTML = 'Player: [ ' + winnerScores[0]+ ' ] Computer: [ ' + winnerScores[1] + ' ]';
-
-            //output player and computer's selections
-            messenger('Player: <strong>' + playerSelection + '</strong> Computer: <strong>' + computerSelection + '</strong><br>' + result);
-        }
-
-        function  messenger(selectionMessage:any){
-            message.innerHTML = selectionMessage;
-        }
-
-        function checkWinner(player:any, computer:any){
-            if (player === computer){
-                return 'Draw';
-            }
-
-            if (player === 'Rock'){
-                if(computer === 'Paper'){
-                    return 'Computer';
-                } else {
-                    return 'Player';
-                }
-            }
-
-            if (player === 'Paper'){
-                if (computer === 'Scissors'){
-                    return 'Computer';
-                } else {
-                    return 'Player';
-                }
-            }
-
-            if (player === 'Scissors'){
-                if (computer === 'Rock'){
-                    return 'Computer';
-                } else {
-                    return 'Player';
-                }
-            }
-        }
